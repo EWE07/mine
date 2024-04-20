@@ -39,29 +39,11 @@ io.on('connection', (socket) => {
 server.listen(8004, () => console.log('Server'));
 
 
+const serverless = require('serverless-http');
+const router = express.Router();
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+app.use('/.netlify/functions/', router); // path must route to lambda
+module.exports.handler = serverless(app);
 
 
 
