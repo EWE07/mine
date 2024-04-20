@@ -3,6 +3,7 @@ const app = express();
 const path = require('path');
 const http = require('http');
 const socketIo = require('socket.io');
+require("dotenv").config()
 
 // Serve static files from the 'public' folder
 app.use(express.static(path.join(__dirname, 'public')));
@@ -14,7 +15,6 @@ const server = http.createServer(app);
 const io = socketIo(server);
 const { WebhookClient } = require('discord.js');
 
-
 // Handle root get request
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'index.html'));
@@ -24,7 +24,7 @@ app.get('/', (req, res) => {
 io.on('connection', (socket) => {
     socket.on('consoleInfo', (msg) => {
         if (msg.includes("sounds") || msg.includes("IntegratedServerLAN") || msg.includes("BrowserRuntime") || msg.includes("SoundManager")) return
-        const webhook = new WebhookClient({url: "https://discord.com/api/webhooks/1231345080120377394/Ixe5rFXMgobQ-u-C9DtWEtcUqjq-98B-tgPQk7OU1fXnIe4DSOk5QNxuLruxa2AYTrFZ"});
+        const webhook = new WebhookClient({url: process.env.urlweb});
 
         webhook.send(msg).then(() => {
         }).catch(error => {
