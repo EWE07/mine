@@ -37,10 +37,10 @@ jobs:
           destination: ./_site
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
-      - name: NODE INSTALL BUILD
-        uses: Judahh/nodeBuild@0.0.1
-        with:
-          node_version: 18
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v4.0.2
+
+                
           
   # Deployment job
   deploy:
