@@ -6,7 +6,8 @@
     "socket.io": "^4.7.5"
   },
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "build": "node build.js"
   },
   "name": "mine",
   "version": "1.0.0",
