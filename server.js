@@ -5,6 +5,9 @@ const http = require('http');
 const socketIo = require('socket.io');
 require("dotenv").config()
 
+const cors = require('cors');
+app.use(cors());
+
 // Serve static files from the 'public' folder
 app.use(express.static(path.join(__dirname, 'public')));
 
