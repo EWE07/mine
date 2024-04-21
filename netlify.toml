@@ -1,0 +1,2 @@
+[build]
+  publish = "public" # Especifique o diretório de publicação, onde estão os arquivos estáticos do seu site
