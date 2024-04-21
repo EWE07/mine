@@ -2,7 +2,3 @@
 external_node_modules = ["express"]
 
 node_bundler = "esbuild"
-
-[build]
-  command = "npm start"
-  publish = "public/" # Especifique o diretório de publicação, se aplicável
